@@ -17,7 +17,7 @@ fun NavGraph(
     navController: NavHostController,
     stockViewModel: StockViewModel
 ) {
-    androidx.navigation.NavHost(
+    NavHost(
         navController = navController,
         startDestination = "pantalla_login"
     ) {
