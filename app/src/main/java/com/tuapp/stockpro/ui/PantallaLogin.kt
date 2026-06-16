@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -22,6 +23,12 @@ private val FondoPantalla = Color(0xFFF5F5F5)
 @Composable
 fun PantallaLogin(navController: NavController) {
     var nombre by remember { mutableStateOf("") }
+
+    fun ingresar() {
+        if (nombre.length >= 3) {
+            navController.navigate("pantalla_catalogo/$nombre")
+        }
+    }
 
     Box(
         modifier = Modifier
@@ -76,6 +83,10 @@ fun PantallaLogin(navController: NavController) {
                 shape = RoundedCornerShape(12.dp),
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
+                keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(imeAction = ImeAction.Done),
+                keyboardActions = androidx.compose.foundation.text.KeyboardActions(
+                    onDone = { ingresar() }
+                ),
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = AzulMarino,
                     focusedLabelColor = AzulMarino,
@@ -86,9 +97,7 @@ fun PantallaLogin(navController: NavController) {
             Spacer(modifier = Modifier.height(8.dp))
 
             Button(
-                onClick = {
-                    navController.navigate("pantalla_catalogo/$nombre")
-                },
+                onClick = { ingresar() },
                 enabled = nombre.length >= 3,
                 modifier = Modifier
                     .fillMaxWidth()

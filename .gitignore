@@ -8,8 +8,15 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
+Thumbs.db
 /build
 /captures
 .externalNativeBuild
 .cxx
 local.properties
+app/build/
+
+# Documentos personales
+/documents
+
+.idea/

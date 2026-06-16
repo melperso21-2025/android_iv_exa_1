@@ -48,6 +48,34 @@ class StockViewModel : ViewModel() {
             descripcion = "Atún en lata al natural",
             precio = 1.50,
             stockActual = 75
+        ),
+        Producto(
+            id = 7,
+            nombre = "Sal",
+            descripcion = "Sal yodada de mesa 1kg",
+            precio = 0.75,
+            stockActual = 3
+        ),
+        Producto(
+            id = 8,
+            nombre = "Fideo",
+            descripcion = "Fideo tallarín de trigo 500g",
+            precio = 1.20,
+            stockActual = 80
+        ),
+        Producto(
+            id = 9,
+            nombre = "Mantequilla",
+            descripcion = "Mantequilla sin sal 200g",
+            precio = 2.80,
+            stockActual = 4
+        ),
+        Producto(
+            id = 10,
+            nombre = "Café",
+            descripcion = "Café molido tradicional 250g",
+            precio = 4.50,
+            stockActual = 25
         )
     )
 
@@ -71,4 +99,3 @@ class StockViewModel : ViewModel() {
         return productos.filter { it.stockActual < 5 }
     }
 }
-
